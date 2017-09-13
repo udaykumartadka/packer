@@ -38,6 +38,15 @@
     "inline": [
       "apt-get update",
       "apt-get install openjdk-8-jdk",
+      "addgroup hab",
+      "adduser -g hab hab",
+      "usermod -aG sudo hab",
+      "cd /usr/local/bin",
+      "wget https://api.bintray.com/content/habitat/stable/linux/x86_64/hab-%24latest-x86_64-linux.tar.gz?bt_package=hab-x86_64-linux",
+      "tar --xvf hab-\$latest-x86_64-linux.tar.gz\?bt_package\=hab-x86_64-linux",
+      "cp -rf  /usr/local/bin/hab-0.31.0-20170907232530-x86_64-linux/ .",
+      "cd hab-0.31.0-20170907232530-x86_64-linux/",
+      "cp hab /usr/local/bin/",
 
       "/usr/sbin/waagent -force -deprovision && export HISTSIZE=0 && sync"
     ],
