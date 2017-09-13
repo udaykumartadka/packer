@@ -1,10 +1,10 @@
 {
   "variables": {
-    "client_id": "{{env `ARM_CLIENT_ID`}}",
-    "client_secret": "{{env `ARM_CLIENT_SECRET`}}",
-    "resource_group": "{{env `ARM_RESOURCE_GROUP`}}",
-    "storage_account": "{{env `ARM_STORAGE_ACCOUNT`}}",
-    "subscription_id": "{{env `ARM_SUBSCRIPTION_ID`}}"
+    "client_id": "d4962dd2-e97e-4f3e-aa00-45e202305782",
+    "client_secret": "+u9VpFP/ZeqpBKuKoLcAUV8vQmB9xwOhi+RZT7Am/Ys=",
+    "resource_group": "ooha",
+    "storage_account": "oohadiag565",
+    "subscription_id": "7eab3893-bd71-4690-84a5-47624df0b0e5"
   },
   "builders": [{
     "type": "azure-arm",
