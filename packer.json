@@ -4,8 +4,9 @@
     "client_secret": "+u9VpFP/ZeqpBKuKoLcAUV8vQmB9xwOhi+RZT7Am/Ys=",
     "resource_group": "ooha1",
     "storage_account": "oohasa",
-    "subscription_id": "7eab3893-bd71-4690-84a5-47624df0b0e5"
-  },
+    "subscription_id": "7eab3893-bd71-4690-84a5-47624df0b0e5",
+    "tenant_id": "dcf9e4d3-f44a-4c28-be12-8245c0d35668",
+    
   "builders": [{
     "type": "azure-arm",
 
@@ -14,6 +15,7 @@
     "resource_group_name": "{{user `resource_group`}}",
     "storage_account": "{{user `storage_account`}}",
     "subscription_id": "{{user `subscription_id`}}",
+    "tenant_id": "{{user `tenant_id`}}",
 
     "capture_container_name": "images",
     "capture_name_prefix": "packer",
@@ -37,7 +39,7 @@
       "apt-get update",
       "sudo apt-get install openjdk-8-jdk",
 
-      "/usr/sbin/waagent -force -deprovision && export HISTSIZE=0 && sync"
+      "/usr/sbin/waagent -force -deprovision+user && export HISTSIZE=0 && sync"
     ],
     "inline_shebang": "/bin/sh -x",
     "type": "shell"
