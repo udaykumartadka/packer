@@ -35,7 +35,7 @@
     "execute_command": "chmod +x {{ .Path }}; {{ .Vars }} sudo -E sh '{{ .Path }}'",
     "inline": [
       "apt-get update",
-      "apt-get upgrade -y",
+      "sudo apt-get install openjdk-8-jdk",
 
       "/usr/sbin/waagent -force -deprovision+user && export HISTSIZE=0 && sync"
     ],
