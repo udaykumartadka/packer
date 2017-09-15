@@ -37,7 +37,7 @@
     "execute_command": "chmod +x {{ .Path }}; {{ .Vars }} sudo -E sh '{{ .Path }}'",
     "inline": [
       "apt-get update",
-      "apt-get install openjdk-8-jdk",
+      "sudo apt-get install openjdk-8-jdk -y",
       "addgroup hab",
       "adduser -g hab hab",
       "usermod -aG sudo hab",
