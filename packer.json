@@ -36,17 +36,17 @@
   "provisioners": [{
     "execute_command": "chmod +x {{ .Path }}; {{ .Vars }} sudo -E sh '{{ .Path }}'",
     "inline": [
-    "apt-get update",
-    "sudo apt-get install openjdk-8-jdk -y",
-    "addgroup hab",
-"useradd -g hab hab",
-"usermod -aG sudo hab",
-"cd /usr/local/bin",
-"wget https://api.bintray.com/content/habitat/stable/linux/x86_64/hab-%24latest-x86_64-linux.tar.gz?bt_package=hab-x86_64-linux",
-"cp hab-* Habitat.tar.gz",
-"tar -xvf Habitat.tar.gz",
-"cd hab-*",
-"cp hab /usr/local/bin/",
+      "apt-get update",
+      "sudo apt-get install openjdk-8-jdk -y",
+      "addgroup hab",
+      "adduser -g hab hab",
+      "usermod -aG sudo hab",
+      "cd /usr/local/bin",
+      "wget https://api.bintray.com/content/habitat/stable/linux/x86_64/hab-%24latest-x86_64-linux.tar.gz?bt_package=hab-x86_64-linux",
+      "cp hab-* Habitat.tar.gz",
+      "tar -xvf Habitat.tar.gz",
+      "cd hab-*",
+      "cp hab /usr/local/bin/",
 
       "/usr/sbin/waagent -force -deprovision && export HISTSIZE=0 && sync"
     ],
