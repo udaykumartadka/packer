@@ -1,6 +1,6 @@
 {
   "variables": {
-    "client_id": "d4962dd2-e97e-4f3e-aa00-45e202305782",
+     "client_id": "d4962dd2-e97e-4f3e-aa00-45e202305782",
     "client_secret": "+u9VpFP/ZeqpBKuKoLcAUV8vQmB9xwOhi+RZT7Am/Ys=",
     "resource_group": "ooha",
     "storage_account": "oohasa1",
@@ -15,7 +15,7 @@
     "resource_group_name": "{{user `resource_group`}}",
     "storage_account": "{{user `storage_account`}}",
     "subscription_id": "{{user `subscription_id`}}",
-    "tenant_id": "{{user `tenant_id`}}",
+     "tenant_id": "{{user `tenant_id`}}",
 
     "capture_container_name": "images",
     "capture_name_prefix": "packer",
@@ -29,14 +29,13 @@
         "dept": "engineering",
         "task": "image deployment"
     },
-    
+
     "location": "West US",
-    "vm_size": "Standard_DS1_v2"
+    "vm_size": "Standard_DS2_v2"
   }],
   "provisioners": [{
     "execute_command": "chmod +x {{ .Path }}; {{ .Vars }} sudo -E sh '{{ .Path }}'",
-    "inline": 
-    [
+    "inline": [
       "apt-get update",
       "sudo apt-get install openjdk-8-jdk -y",
       "addgroup hab",
@@ -49,7 +48,7 @@
       "cd hab-*",
       "cp hab /usr/local/bin/",
 
-      "/usr/sbin/waagent -force -deprovision && export HISTSIZE=0 && sync"
+      "/usr/sbin/waagent -force -deprovision+user && export HISTSIZE=0 && sync"
     ],
     "inline_shebang": "/bin/sh -x",
     "type": "shell"
