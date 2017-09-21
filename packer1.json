@@ -38,8 +38,8 @@
     "inline": [
       "apt-get update",
       "sudo apt-get install openjdk-8-jdk -y",
-      "wget https://raw.githubusercontent.com/ooha-m/packer/master/hello-world.hart",
-
+      "sudo wget https://raw.githubusercontent.com/ooha-m/packer/master/hello-world.hart",
+    
       "/usr/sbin/waagent -force -deprovision+user && export HISTSIZE=0 && sync"
     ],
     "inline_shebang": "/bin/sh -x",
