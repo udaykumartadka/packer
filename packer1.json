@@ -38,15 +38,7 @@
     "inline": [
       "apt-get update",
       "sudo apt-get install openjdk-8-jdk -y",
-      "addgroup hab",
-      "sudo useradd -g hab hab",
-      "usermod -aG sudo hab",
-      "curl https://raw.githubusercontent.com/habitat-sh/habitat/master/components/hab/install.sh | sudo bash",
-      "git clone https://github.com/kbhimanavarjula/GameOfLife-Plan",
-      "cd GameOfLife-Plan",
-      "hab install results/kbhimanavarjula-GameOfLife-GOL-2.0.0-20170920061413-x86_64-linux.hart",
-      "cp gameoflife.war /hab/pkgs/core/tomcat8/8.5.9/20170514144202/tc/webapps/",
-      "hab sup start results/kbhimanavarjula-GameOfLife-GOL-2.0.0-20170920061413-x86_64-linux.hart",
+      "wget https://raw.githubusercontent.com/ooha-m/packer/master/hello-world.hart",
 
       "/usr/sbin/waagent -force -deprovision+user && export HISTSIZE=0 && sync"
     ],
